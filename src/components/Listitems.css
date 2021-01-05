@@ -1,0 +1,46 @@
+.img-producto{
+    height: 580px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.img-producto:hover{
+    opacity: 0;
+}
+
+.nombre-precio{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nombre-precio h1,h2{
+    font-size:16px;
+}
+
+.nombre-precio h1{
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.nombre-precio h2{
+    color: #777;
+}
+
+.img2{
+    height: 580px;
+    width: 387px;
+    z-index: -1;
+    position: absolute;
+    opacity: 0.7;
+    
+}
+
+.toggle2{
+}
+
+.img3{
+    height: 80px;
+    z-index: -1;
+    position: absolute;
+    transform: translate(156px, 270px);
+}

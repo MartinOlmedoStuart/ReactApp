@@ -1,0 +1,51 @@
+.restar{ 
+    background-color: rgb(128, 128, 128);
+    width: 12px;
+    height: 2px;
+    border-radius: 25%;
+}
+
+.sumar{
+    width: 12px;
+    height: 2px;
+    background-color: rgb(128, 128, 128);
+    border-radius: 25%; 
+}
+.sumar2{ 
+    transform: rotate(90deg) translateX(-2px);
+}
+
+.espesor{
+   padding: 10px 0px;
+   cursor: pointer;
+   margin: 0 8px;
+}
+
+.espesor2{
+    padding: 8px;
+    cursor: pointer;
+}
+
+.BtnACarro{
+    margin-top: 20px;
+    padding: 3px;
+}
+.BtnACarro:hover{
+    background-color: black;
+    color: white;
+}
+
+#img-detail{
+    height: 300px;
+    margin-right: 40px;
+}
+
+article{
+    display: flex;
+    margin-bottom : 47px;
+    margin-top: 10px;
+}
+
+.precio-detail{
+    margin-top: 10px;
+}

@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    /* overflow-x: hidden; */
+    box-sizing: border-box;
+}
+.container{
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ctr{
+    margin-top: 10px;
+    min-height: 50px;
+}
+#logo{
+    display: block;
+    height: 100px;
+    transition: all 0.5s;
+}
+.links{
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.descuentos{
+    width: 100%;
+    background-color: #000000;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    display: inline;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+li{
+    list-style: none;
+    margin:0 30px;
+}
+a:hover{
+    color: #777;
+    text-decoration: none;
+}
+a{
+    color: black;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+
+.carrito{
+    height: 40px;
+    right: 2%;
+    cursor: pointer;
+}
+
+.mundo{
+    height: 30px;
+    left: 0;
+    margin-left:2%;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.mundo img{
+    height: 30px;
+}
+.mundo p{
+    padding-left: 40px;
+    color: black;
+    font-size: 10px;
+}
+
+.carro{
+    margin-top: 60px;
+    position: absolute;
+    right: 20px;
+    font-weight: bold;
+}
+
+
+#fav{
+    margin-top: 150px;
+    font-size: 1.5rem;
+    display: inline-block;
+    margin-left: 2%;
+    border-bottom: 1px solid #777;
+}
+
+.test{
+    transform: translateY(-100px);
+    position: absolute;
+}
+
+.test2{
+    margin-top: 30px;
+}
+
+.orden{
+    margin-left: 2%;
+    margin-right: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px;
+}
+
+/* .med, .izq, .der{
+    flex: 1;
+} */
+
+.der{
+    display: flex;
+    justify-content: flex-end;
+}

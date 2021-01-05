@@ -1,0 +1,172 @@
+.carro-desplegable{
+    padding-left: 20px;
+    padding-right: 20px;
+    position: absolute;
+    top: 0;
+    right: -500px;
+    min-height: 100vh;
+    width: 500px;
+    background-color:white;
+    transition: transform 0.3s ease;
+    z-index: 10000;
+}
+
+.toggle{
+    transform: translateX(-500px);
+}
+
+.envio{
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.total{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.subtotal{
+    margin-top: 20px ;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.carro-desplegable h2{
+    letter-spacing: 1px;
+}
+.cdc{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid grey;
+    padding-bottom: 20px;
+}
+.cdc h1{
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600;
+    
+}
+
+#btn-1{
+    margin-top: 4px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background:black;
+    display: block;
+    padding: 10px 10px;
+    border: none;
+    transition: 0.5s;
+    cursor: pointer;
+}
+#btn-2{
+    margin-top: 4px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    transition: 0.5s;
+    cursor: pointer;
+}
+#btn-2:hover{
+    color:rgba(0, 0, 0, 0.5);
+}
+#btn-1:hover{
+    opacity: 0.8;
+}
+
+.cross{
+    height: 14px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+form{
+    display: flex;
+}
+
+form input{
+    flex: 1;
+    padding: 6px;
+}
+
+form button{
+    background: black;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px;
+    border: none;
+}
+
+.preview{
+    display: flex;
+}
+
+.preview h3{
+    margin-top: 20px;
+    display: block;
+    font-size: 16px;
+}
+.prec{
+    margin-top: 10px;
+    color: #777;
+}
+#precius{
+    font-size: 0.9rem;
+    margin-top: 8px;
+    color: #777;
+}
+
+
+.prevImg{
+    text-align: center;
+    height:130px;
+    margin-right: 20px;
+}
+
+.contador{
+    font-weight: bolder;
+    font-size: 14px;
+    border-radius: 50%;
+    border: none;
+    height: 18px;
+    width: 18px;
+    margin-left: 5px;
+    transform: translate(0px, 20px);
+}
+
+.menos{
+    height: 10px;
+    cursor: pointer;
+}
+#menos{
+    height: 10px;
+    cursor: pointer;
+    transform: rotate(90deg) translateY(10px);
+}
+
+.spanstyle{
+    font-size: 18px;
+    color: rgb(128, 128, 128);
+    margin:10px 0px;
+}
+
+.contador-items{
+    margin-top: 10px;
+    border: 1px solid rgb(128, 128, 128);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100px;
+    height: 34px;
+}
+
+#refresh{
+    height: 20px;
+}
