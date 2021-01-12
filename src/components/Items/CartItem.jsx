@@ -1,6 +1,21 @@
 import ItemCount from "./ItemCount";
+import {Store} from "../../store";
+import {useContext} from "react";
 
-const CartItem = ({nombre,url,precio,stock}) => {
+const CartItem = ({nombre,url,precio,stock,id}) => {
+
+    let total = 0;
+
+    const [data, setData] = useContext(Store);
+
+    function handelClickTrash (){
+            let index = 0;
+            for(let i=0; i<data.items.length; i++){
+                index = i;
+            }
+            setData({cantidad:data.cantidad-data.items[index].cantidad, items:data.items.filter(item => item.nombre !== nombre)})
+       
+    }
 
     return(
     <>
@@ -9,8 +24,9 @@ const CartItem = ({nombre,url,precio,stock}) => {
             <div>
                 <h3>{nombre}</h3>
                 <h3 id="precius">{precio}</h3>
-                < ItemCount stock={stock}/>
+                < ItemCount stock={stock} nombre={nombre} id={id}/>
             </div>
+            <img onClick={handelClickTrash} id="trash" src="https://image.flaticon.com/icons/png/512/60/60761.png" alt=""/>
         </div>
     </>
     )

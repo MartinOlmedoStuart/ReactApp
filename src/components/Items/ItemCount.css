@@ -37,7 +37,11 @@
 
 #img-detail{
     height: 300px;
-    margin-right: 40px;
+    margin-right: 80px;
+}
+
+.flexor{
+    margin-left: 40px;
 }
 
 article{
@@ -49,3 +53,4 @@ article{
 .precio-detail{
     margin-top: 10px;
 }
+

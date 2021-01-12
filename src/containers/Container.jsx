@@ -27,7 +27,7 @@ function Container(){
     const getProducts = new Promise ((resolve,reject) =>{
         setTimeout(()=>{
             resolve(products);
-        },2000)
+        },500)
     })
     
     useEffect(() => {

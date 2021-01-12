@@ -6,12 +6,27 @@ import {BrowserRouter, Switch, Route} from "react-router-dom"
 import Error404 from "./components/Eror404";
 import Category from "./components/Category";
 import CarroWindow from "./components/CarroWindow";
+import {Store} from "./store/index";
+import {useState} from "react";
+import CarroWidget from "./components/CarroWidget";
+import {Carro} from "./carro/index"
 
 function App() {
 
+  const [abierto, setAbierto] = useState(false);
+
+  const [data, setData]= useState({
+    cantidad:0,
+    items:[]
+  });
+
   return (
-    <BrowserRouter>
-    <NavigationBar />
+    <Store.Provider value={[data,setData]}>
+    <Carro.Provider value={[abierto, setAbierto]}>
+
+       <BrowserRouter>
+        <NavigationBar />
+        <CarroWidget />
     <Switch>
       <Route exact path="/">
         <Container />
@@ -36,11 +51,9 @@ function App() {
     </Switch>
     <Footer />
     </BrowserRouter>
-    // {/* < NavigationBar/>
-    // < StarWars />
-    // < ItemDetailContainer />
-    // <Container/> */}
-    // {/* <Footer /> */}
+
+    </Carro.Provider>
+    </Store.Provider>
     
   )
 };
