@@ -7,14 +7,18 @@ import {Carro} from "../carro";
 function CartWidget(){
     const [data, setData] = useContext(Store);
     const [abierto, setAbierto] = useContext(Carro);
+    let bandera=true;
+    if(data.items.length>0){
+        bandera=false;
+    }
 
     function CambiarSetShow(){
     setAbierto(!abierto);
     };
     return(
         <>
-        <img onClick={CambiarSetShow} src="https://img.icons8.com/material-rounded/452/shopping-cart.png" alt="" className="carrito"/>
-        <span className="contador">{data.cantidad}</span>
+        <img onClick={CambiarSetShow} src="https://img.icons8.com/material-rounded/452/shopping-cart.png" className={`carrito ${bandera ? "hide" : ""}`}/>
+        <span className={`contador ${bandera ? "hide" : ""}`}>{data.cantidad}</span>
         </>
     )
 }

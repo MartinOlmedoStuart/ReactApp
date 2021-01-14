@@ -3,8 +3,16 @@ import CartItem from "./Items/CartItem";
 import {Carro} from "../carro";
 import {useContext} from "react";
 import {Store} from "../store";
+import {useHistory} from "react-router-dom";
 
 function CarroWidget(){
+
+    let history = useHistory()
+
+    function handelRedirect(){
+        cerrar();
+        history.push('/carro')
+    };
 
     const [data, setData] = useContext (Store);
     const [abierto, setAbierto] = useContext(Carro);
@@ -50,7 +58,7 @@ function CarroWidget(){
             <h1>{total}</h1>
             </div>
            
-            <button id="btn-1">Iniciar Compra</button>
+            <button id="btn-1" onClick={handelRedirect}>Iniciar Compra</button>
             <button id="btn-2">Seguir Comprando</button>
         </div>
     )

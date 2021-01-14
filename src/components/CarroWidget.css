@@ -177,3 +177,16 @@ form button{
 #refresh{
     height: 20px;
 }
+
+.hide{
+    height: 0px;
+}
+
+.wrapp{
+    display: flex;
+    justify-content: space-around
+};
+
+.ups{
+    margin-left: 30px;
+}
