@@ -24,7 +24,7 @@ function CarroWidget(){
     let total= 0;
 
     data.items.map(item => (
-            total = item.precio + total
+            total = item.data.precio + total
     ));
 
 
@@ -36,7 +36,7 @@ function CarroWidget(){
             </div>
 
             {data.items.map(item => (
-                    <CartItem id={item.id} url={item.url} nombre={item.nombre} precio={item.precio} stock={item.stock} />
+                    <CartItem id={item.id} url={item.data.url} nombre={item.data.nombre} precio={item.data.precio} stock={5} cantidad={item.data.cantidad}/>
                     ))}
 
            

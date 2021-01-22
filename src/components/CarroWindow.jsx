@@ -12,7 +12,8 @@ function CarroWindow () {
     };
 
     function handelCompra(){
-        alert("Felicitaciones, terminaste tu compra!!")
+        history.push('/checkout')
+
     };
 
     const [data, setData] = useContext(Store);
@@ -20,7 +21,7 @@ function CarroWindow () {
     let total= 0;
 
     data.items.map(item => (
-            total = item.precio + total
+            total = item.data.precio * item.data.cantidad + total
     ));
     if(data.items.length===0){
         return(
@@ -38,7 +39,7 @@ function CarroWindow () {
         <>
         <h1 id="fav">YA CASI ES TUYO...</h1>
         {data.items.map(item => (
-                    <CartItem id={item.id} url={item.url} nombre={item.nombre} precio={item.precio} stock={item.stock} />
+                    <CartItem id={item.id} url={item.data.url} nombre={item.data.nombre} precio={item.data.precio} stock={item.stock} cantidad={item.data.cantidad} />
                     ))}
         <div className="wrapp">
             <h1>Total: {total}</h1>

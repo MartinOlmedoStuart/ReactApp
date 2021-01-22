@@ -1,60 +1,65 @@
-import {useState , useContext} from "react";
+import {useState , useContext, useEffect} from "react";
 import "./ItemCount.css";
 import {Store} from "../../store";
 
-function ItemCount({stock, nombre, id}){
-
-    let index=0;
+function ItemCount({cantidad,id}){
 
    const [band, setBand] = useState(true);
    const [data, setData] = useContext(Store);
+   const [cant, setCant] = useState(0);
+   useEffect(() => {
+    setCant(cantidad)
+},[cantidad]);
+   
 
-   for (let i=0; i<data.length ;i++){
-       if(data[i].nombre === nombre){
-           let index = i;
-       }
-   }
+   let copia = data;
+    let index=0;
+    for (let i =0; i< data.items.length; i++){
+        if(data.items[i].id==id){
+            let index=i;
+        }
+    }
 
-   console.log(index)
-
+//    setTimeout(()=>{
+//     setBand(true)
+//             },5000)
 
    function disminuirContador(){
-    const consultarStock= new Promise((resolve, reject) => {
-
-        setBand(false);
-        if(data.items[index].cantidad > 1){
-        setTimeout(()=>{
-            let copia = data;
-            copia.items[index].cantidad= copia.items[index].cantidad-1;
-            resolve( setData(copia))
-            
-            setBand(true);
-        },2000)}
-        else{
-            resolve ( setBand(true))
+    setBand(false);
+    for (let i =0; i< data.items.length; i++){
+        if(data.items[i].id==id){
+            copia.items[i].data.cantidad=copia.items[i].data.cantidad -1;
+            copia.cantidad=copia.cantidad-1;
+            setData(copia)
+            setCant(cant-1)
+            let index=i;
         }
-        
-    })
+    }
+    setTimeout(()=>{
+    setBand(true);
+    },2000)
+
 };
 
     function aumentarContador(){
-        const consultarStock= new Promise((resolve, reject) => {
-
-
+        
+    //     const consultarStock= new Promise((resolve, reject) => {
+        for (let i =0; i< data.items.length; i++){
+            if(data.items[i].id==id){
+                copia.items[i].data.cantidad=copia.items[i].data.cantidad + 1;
+                copia.cantidad=copia.cantidad+1;
+                setData(copia)
+                let index=i;
+            }
+        }
+        console.log(cantidad)
             setBand(false);
             setTimeout(()=>{
-                if(data.items[index].cantidad < stock){
-                let copia = data;
-                copia.items[index].cantidad= copia.items[index].cantidad+1;
-                resolve( setData(copia))
-                }
-                else{
-                    reject(alert("¡Uy! No tenemos más stock de este producto para agregarlo al carrito"))
-                }
             setBand(true);
             },2000)
-        })
-      console.log(data)
+    //     })
+    //   console.log(data)
+    setCant(cantidad+1)
     };
 
     return(
@@ -66,8 +71,7 @@ function ItemCount({stock, nombre, id}){
             </div>
            
             {
-            band ? <span className="spanstyle">{data.items[index].cantidad}</span> : <span className="spanstyle"><img id="refresh" src="https://cdn.lowgif.com/full/81ba4d9c4c799e48-.gif" alt=""/></span>
-            
+                band ? <span className="spanstyle">{cant}</span> : <span className="spanstyle"><img id="refresh" src="https://cdn.lowgif.com/full/81ba4d9c4c799e48-.gif" alt=""/></span>
             }
            
             <div className="espesor2" onClick={aumentarContador}>

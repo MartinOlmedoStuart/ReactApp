@@ -7,9 +7,10 @@ import Error404 from "./components/Eror404";
 import Category from "./components/Category";
 import CarroWindow from "./components/CarroWindow";
 import {Store} from "./store/index";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import CarroWidget from "./components/CarroWidget";
-import {Carro} from "./carro/index"
+import {Carro} from "./carro/index";
+import CheckOut from "./Checkout";
 
 function App() {
 
@@ -19,6 +20,10 @@ function App() {
     cantidad:0,
     items:[]
   });
+
+  useEffect(() => {
+    console.log(data)
+},[data]);
 
   return (
     <Store.Provider value={[data,setData]}>
@@ -31,7 +36,11 @@ function App() {
       <Route exact path="/">
         <Container />
       </Route>
-   
+
+      <Route exact path="/checkout">
+      <CheckOut />
+      </Route>
+
       <Route path="/category/:name?">
       <Category />
       </Route>
